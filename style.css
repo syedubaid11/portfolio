@@ -12,8 +12,8 @@ body{
 }
 
 .hero{
-    /* background:url('./images/StockSnap_UV4PIZ1DEK.jpg'); */
-    font-size: 50px;
+    background:url('./images/StockSnap_UV4PIZ1DEK.jpg');
+    font-size: 200px;
     background-repeat: no-repeat;
     font-weight: 600;
     object-fit: cover;
@@ -55,7 +55,6 @@ body{
 
 .hero-3{
     height:100vh;
-    display: none;/* change using gsap and make it block*/
 }
 
 .cross {
@@ -77,7 +76,6 @@ body{
         transform: translateY(80%);
 
     }
-    
 }
 
 /* The horizontal line of the cross */
@@ -110,8 +108,20 @@ body{
     display: flex;
 }
 
+
 .bar{
     width:10vw;
     height: 105vh;
     background-color: #1a1a1a;
+}
+
+.bar-text{
+    position: absolute;
+    
+    font-size: 150px;
+    color: rgb(219, 216, 216);
+}
+
+.cross{
+    
 }
