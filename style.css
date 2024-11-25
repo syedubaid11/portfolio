@@ -23,6 +23,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 
@@ -60,22 +61,8 @@ body{
 .cross {
     width: 100px;
     height: 100px;
-    position: relative;
     margin: 50px auto;
-    animation-name:move;
-    animation-duration: 4s;
-    animation-play-state: paused;
-}
-
-@keyframes move {
-    from{
-        transform: translateY(0%);
-
-    }
-    to{
-        transform: translateY(80%);
-
-    }
+   
 }
 
 /* The horizontal line of the cross */
@@ -125,3 +112,17 @@ body{
 .cross{
     
 }
+
+
+.end-animation{
+    height:2000px;
+    width: auto;
+}
+
+.hero-bottom{
+    position:absolute;
+    bottom: 0%;
+    left:0%;
+    font-size: 20px;
+}
+

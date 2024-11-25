@@ -37,18 +37,24 @@ gsap.fromTo('.bar-text',
 
 ScrollTrigger.create({
     trigger:".cross",
-    start:'top top',
+    start:'top center',
     pin:true,
     endTrigger:'.end-animation',
-    end:'bottom top',
+    end:'bottom bottom',
     pinSpacing:false,
     markers:true
 
 })
 
+
 ScrollTrigger.create({
     trigger:".cross",
-    start:"top top",
-    endTrigger:""
-
+    start:'top center',
+    endTrigger:'.end-animation',
+    end:'bottom bottom',
+    onUpdate:(self)=>{
+        const rotation=self.progress *360;
+        gsap.to(".cross",{rotation})
+    }
 })
+
