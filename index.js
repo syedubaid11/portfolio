@@ -30,8 +30,17 @@ gsap.to('.bar',1.5,{
 
 })
 
+gsap.fromTo('.hero',2,{
+    opacity:0,
+    y:-10
+},{opacity:1,
+    y:0,
+    ease:"power2.out",
+    delay:1.4
+})
+
 gsap.fromTo('.bar-text',
-{opacity:1},{ opacity:0,duration:3
+{opacity:1},{ opacity:0,duration:3.2
     
 })
 
@@ -42,7 +51,7 @@ ScrollTrigger.create({
     endTrigger:'.end-animation',
     end:'bottom bottom',
     pinSpacing:false,
-    markers:true
+    
 
 })
 
@@ -57,4 +66,3 @@ ScrollTrigger.create({
         gsap.to(".cross",{rotation})
     }
 })
-
