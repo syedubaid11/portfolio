@@ -49,6 +49,8 @@ gsap.fromTo('.bar-text',
     
 })
 
+
+//cross animations
 ScrollTrigger.create({
     trigger:".cross",
     start:'top center',
@@ -69,5 +71,22 @@ ScrollTrigger.create({
     onUpdate:(self)=>{
         const rotation=self.progress *360;
         gsap.to(".cross",{rotation})
+    }
+})
+
+
+ScrollTrigger.create({
+    trigger:".white-text-container",
+    start:"top 50%",
+    end:"bottom bottom",
+    scrub:1,
+    onUpdate:(self)=>{
+        console.log('updating')
+        const scale=1+ 12 * self.progress;
+        gsap.to(".white-text-container",{
+            scale:scale,
+            ease:'none',
+            duration:0
+        })
     }
 })
