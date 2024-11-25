@@ -25,6 +25,11 @@ gsap.to('.bar',1.5,{
     height:0,
     stagger:{
         amount:0.5,
+        onComplete: function() {
+            // After the animation completes, set the visibility to hidden
+            document.querySelector('.overlay').style.visibility = 'hidden';
+        },
+    
     },
     ease:'power4.inOut'
 
