@@ -40,6 +40,15 @@ ScrollTrigger.create({
     start:'top top',
     pin:true,
     endTrigger:'.end-animation',
-    end:'bottom bottom',
+    end:'bottom top',
+    pinSpacing:false,
+    markers:true
+
+})
+
+ScrollTrigger.create({
+    trigger:".cross",
+    start:"top top",
+    endTrigger:""
 
 })
