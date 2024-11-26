@@ -55,46 +55,30 @@ ScrollTrigger.create({
     start:'top center',
     pin:true,
     endTrigger:'.end-animation',
-    end:'bottom bottom',
+    end:'top center',
     pinSpacing:false,
     
 
 })
 
-
+//cross animation
 ScrollTrigger.create({
     trigger:".cross",
     start:'top center',
     endTrigger:'.end-animation',
-    end:'bottom bottom',
+    end:'top center',
     onUpdate:(self)=>{
         const rotation=self.progress *360;
         gsap.to(".cross",{rotation})
     }
 })
 
-
+//cross animation becoming square
 ScrollTrigger.create({
-    trigger:".white-text-container",
-    start:"top 50%",
-    end:"bottom bottom",
-    scrub:1,
-    onUpdate:(self)=>{
-        console.log('updating')
-        const scale=1+ 12 * self.progress;
-        gsap.to(".white-text-container",{
-            scale:scale,
-            ease:'none',
-            duration:0
-        })
-    }
-})
-
-ScrollTrigger.create({
-    trigger:"cross",
+    trigger:".cross",
     start:"top center",
     endTrigger:".end-animation",
-    end:"bottom bottom",
+    end:"top center",
     onUpdate:(self)=>{
         const progress=self.progress;
         console.log(progress);//checking the progress
@@ -102,10 +86,55 @@ ScrollTrigger.create({
             ${45 - 45*progress}% ${0+0*progress}%,
             ${55 + 45*progress}% ${0+0*progress}%,
             ${55+ 45*progress}% ${100-0*progress}%,
-            
-
-
-        )`
+            ${45- 45* progress}% ${100-0 *progress}%    
+        )`;
+        gsap.to(".cross-1 , .cross-2",{
+            clipPath:clipPath,
+            duration:0,
+            ease:"none"
+        })
     }
 
 })
+//animation to bring the cross to the center
+ScrollTrigger.create({
+    trigger:".end-animation",
+    start:'top center',
+    end:'top top',
+    scrub:1,
+    markers:true,
+    onUpdate:(self)=>{
+        const progress=self.progress;
+        const left=50+15*progress;
+        const scale=1+ 12 * self.progress;
+
+        gsap.to('.cross',{
+            left:`${left}`,
+            scale:scale,
+            scrub:1,
+            ease:"none",
+            duration:0
+
+        })
+
+    }
+})
+
+
+// ScrollTrigger.create({
+//     trigger:".white-text-container",
+//     start:"top 50%",
+//     end:"bottom bottom",
+//     scrub:1,
+//     onUpdate:(self)=>{
+//         console.log('updating')
+//         const scale=1+ 12 * self.progress;
+//         gsap.to(".cross",{
+//             scale:scale,
+//             ease:'none',
+//             duration:0
+//         })
+//     }
+// })
+
+
