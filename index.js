@@ -102,9 +102,9 @@ ScrollTrigger.create({
     start:'top center',
     end:'top top',
     scrub:1,
-    markers:true,
     onUpdate:(self)=>{
         const progress=self.progress;
+        console.log(50+15*progress);
         const left=50+15*progress;
         const scale=1+ 12 * self.progress;
 
