@@ -26,7 +26,6 @@ gsap.to('.bar',1.5,{
     stagger:{
         amount:0.5,
         onComplete: function() {
-            // After the animation completes, set the visibility to hidden
             document.querySelector('.overlay').style.visibility = 'hidden';
         },
     
@@ -89,4 +88,24 @@ ScrollTrigger.create({
             duration:0
         })
     }
+})
+
+ScrollTrigger.create({
+    trigger:"cross",
+    start:"top center",
+    endTrigger:".end-animation",
+    end:"bottom bottom",
+    onUpdate:(self)=>{
+        const progress=self.progress;
+        console.log(progress);//checking the progress
+        const clipPath=`polygon(
+            ${45 - 45*progress}% ${0+0*progress}%,
+            ${55 + 45*progress}% ${0+0*progress}%,
+            ${55+ 45*progress}% ${100-0*progress}%,
+            
+
+
+        )`
+    }
+
 })
