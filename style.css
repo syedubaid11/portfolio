@@ -24,6 +24,11 @@ body{
     position: relative;
 }
 
+.lower-heading{
+    position: relative;
+    right:120px;
+
+}
 
 
 .hero-2{
@@ -179,11 +184,20 @@ body{
     width: 100%;
     height:100vh;
     background-color: white;
-    z-index: 0;
-
+    z-index: 20;
 }
 
 .white-text{
+    margin-top:80px;
     color:black;
     font-size: 200px;
+}
+
+.hero-bottom-right{
+    position: absolute;
+    bottom:0%;
+    right:0%;
+    font-size:40px;
+
+
 }

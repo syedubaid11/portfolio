@@ -105,8 +105,8 @@ ScrollTrigger.create({
     onUpdate:(self)=>{
         const progress=self.progress;
         console.log(50+15*progress);
-        const left = 50 + 400 * progress;        
-        const scale=1+ 12 * self.progress;
+        const left = 50 + 450 * progress;        
+        const scale=1 + 16 * self.progress;
 
         gsap.to('.cross',{
             left:`${left}`,
